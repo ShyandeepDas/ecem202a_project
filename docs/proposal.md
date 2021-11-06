@@ -41,6 +41,7 @@ Neural Networks for Compressed Sensing Based on Information Geometry
 Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network
 Neural signal compressive sensing
 Stable signal recovery from incomplete and inaccurate measurements
+
 These papers gave us an idea of how to use deep nets for image enhancement as well as reconstruction. We borrowed a lot from these papers and are trying to implement a model which aims to achieve a similar goal.
 
 ### 9.b. Datasets
