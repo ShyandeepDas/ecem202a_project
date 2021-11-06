@@ -36,15 +36,15 @@ We will first decide what size of the image we would want to work with then find
 
 ### 9.a. Papers
 
-ESRGAN: Enhanced Super-Resolution Generative Adversarial Networks
+ESRGAN: Enhanced Super-Resolution Generative Adversarial Networks [1]
 
-Neural Networks for Compressed Sensing Based on Information Geometry
+Neural Networks for Compressed Sensing Based on Information Geometry [2]
 
-Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network
+Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network [3]
 
-Neural signal compressive sensing
+Neural signal compressive sensing [4]
 
-Stable signal recovery from incomplete and inaccurate measurements
+Stable signal recovery from incomplete and inaccurate measurements [5]
 
 These papers gave us an idea of how to use deep nets for image enhancement as well as reconstruction. We borrowed a lot from these papers and are trying to implement a model which aims to achieve a similar goal.
 
