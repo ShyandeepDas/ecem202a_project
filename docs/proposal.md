@@ -54,7 +54,7 @@ ImageNet
 
 ### 9.c. Software
 
-OpenCV, NumPy, Matplotlib, Torch, Torchvision
+Python Libraries: OpenCV, NumPy, Matplotlib, Torch, Torchvision
 
 ## 10. References
 
