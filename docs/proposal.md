@@ -50,11 +50,11 @@ These papers gave us an idea of how to use deep nets for image enhancement as we
 
 ### 9.b. Datasets
 
-ImageNet
+ImageNet [6]
 
 ### 9.c. Software
 
-Python Libraries: OpenCV, NumPy, Matplotlib, Torch, Torchvision
+Python Libraries: OpenCV[7], NumPy[8], Matplotlib[9], Torch[10], Torchvision[11]
 
 ## 10. References
 
