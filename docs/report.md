@@ -32,6 +32,8 @@ Similar approaches already exist to imitate compressive sensing using a neural n
 
 # 5. Discussion and Conclusions
 
+In this project, we have introduced a Convonutional Neural Network to reconstruct a sampled image with a fraction of original pixels. We have used a complete randomizer mask to sample the original image. As evaluation we have trained the network with different proportion of input samplers. We used 10%, 25%, 30% randomized pixel samplers to train our network and compaired it's performance with a network trained on only 25% random pixel sampler. We used SSIM as the similarity metric for our performance analysis, we mesure the SSIM of the network output images with the original images to get a sense of the accuracy of reconstruction. Eventhough our model can reproduce an output that is quite similar to original image, there are quite a bit of information loss and color shift present in the output images. However, are more advanced DNN architectures such as Generative Adverserial Networks (GAN) which may be able to produce even better reconstructions. Also, it may be possible to train a deep net capabale of both reconstruction and super resolution.
+
 # 6. References
 
 [x]P Hanumanth1, P Bhavana2 and Shreyanka Subbarayappa, "Application of deep learning and compressed sensing for reconstruction of images", Vol1706, First International Conference on Advances in Physical Sciences and Materials 13-14 (2020) Coimbatore, India.
