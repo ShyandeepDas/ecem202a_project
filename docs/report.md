@@ -34,11 +34,11 @@ One of the main objectives of the model was to reduce the computation required a
 
 After the network is trained, it is capable quite accurate reconstruction of a randondomly sampled image. Fig.2 consists of some examples of regenrated outputs. Fig.2(a) images are the sampled image Fig.2(b) is the mask used to sample said image, Fig.2(c) is the output of model and Fig.2(d) represents the original image that the model tries to recreate. Our model has achieved a SSIM of xx on new images. The training was done on a dataset of 8123 images with 7123 training and 1000 testing split.
 
-![GitResults](https://user-images.githubusercontent.com/93070088/145701086-474f6350-2aef-42c0-ba38-40f2f10fc3d2.png)
+![GitResults](https://user-images.githubusercontent.com/93070088/145701451-2d7cfbc1-986b-4a1b-84d4-3bbe8c3dedf7.png)
 
 We have also implemented the ESRGAN[] along with our reconstructor CNN to implement super-resolution. We send the output of our CNN as an input of the ESRGAN to generate a higher resolution final output. The ESRGAN is a well-cited excellent super-resolution model, so we tried to implement that in our pipeline to get better results. Fig.3 shows the final output of our pipeline when the reconstructed image is enhanced with the ESRGAN. Fig.2(c) is the 64x64 reconstructed output and the Fig.3 is the 128x128 is the final output after superresolution with ESRGAN.
 
-![ESRsunflowa](https://user-images.githubusercontent.com/93070088/145701322-be42556c-9d86-4517-bc50-ec7c91aa95c1.png)
+![ESRsunflowa](https://user-images.githubusercontent.com/93070088/145701458-85399e36-8850-463c-a449-d210a11f0fca.png)
 
 # 4. Evaluation and Results
 
