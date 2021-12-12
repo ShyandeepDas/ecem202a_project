@@ -35,11 +35,11 @@ One of the main objectives of the model was to reduce the computation required a
 After the network is trained, it is capable quite accurate reconstruction of a randondomly sampled image. Fig.2 consists of some examples of regenrated outputs. Fig.2(a) images are the sampled image Fig.2(b) is the mask used to sample said image, Fig.2(c) is the output of model and Fig.2(d) represents the original image that the model tries to recreate. Our model has achieved a SSIM of xx on new images. The training was done on a dataset of 8123 images with 7123 training and 1000 testing split.
 
 ![PlaneBirdgit](https://user-images.githubusercontent.com/93070088/145700969-04e0fbf7-5bdd-4442-a19f-fb2159c1f3b4.jpg)
-[imageSunglowa](https://user-images.githubusercontent.com/93070088/145701007-ca472cbe-548b-4bb2-a3ae-85e35e992f0a.png)
+![imageSunglowa](https://user-images.githubusercontent.com/93070088/145701007-ca472cbe-548b-4bb2-a3ae-85e35e992f0a.png)
 
 We have also implemented the ESRGAN[] along with our reconstructor CNN to implement super-resolution. We send the output of our CNN as an input of the ESRGAN to generate a higher resolution final output. The ESRGAN is a well-cited excellent super-resolution model, so we tried to implement that in our pipeline to get better results.
 
-# 4. Evaluation and Results!
+# 4. Evaluation and Results
 
 
 
