@@ -53,11 +53,19 @@ In this project, we have introduced a Convolutional Neural Network to reconstruc
 # 6. References
 
 [1] M. Rani, S. B. Dhok and R. B. Deshmukh, "A Systematic Review of Compressive Sensing: Concepts, Implementations and Applications," in IEEE Access, vol. 6, pp. 4875-4894, 2018, doi: 10.1109/ACCESS.2018.2793851.
+
 [2] C. Dong, C. C. Loy, K. He and X. Tang, "Image Super-Resolution Using Deep Convolutional Networks," in IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 38, no. 2, pp. 295-307, 1 Feb. 2016, doi: 10.1109/TPAMI.2015.2439281.
+
 [3] W. Shi, F. Jiang, S. Liu and D. Zhao, "Image Compressed Sensing Using Convolutional Neural Network," in IEEE Transactions on Image Processing, vol. 29, pp. 375-388, 2020, doi: 10.1109/TIP.2019.2928136.
+
 [4] R. Heckel, M. Soltanolkotabi, "Compressive sensing with un-trained neural networks: Gradient descent finds the smoothest approximation", https://arxiv.org/abs/2005.03991
+
 [5] P Hanumanth1, P Bhavana2 and Shreyanka Subbarayappa, "Application of deep learning and compressed sensing for reconstruction of images", Vol1706, First International Conference on Advances in Physical Sciences and Materials 13-14 (2020) Coimbatore, India.
+
 [6] A. Bora, A. Jalal, E. Price, A. G. Dimakis, "Compressed Sensing using Generative Models", https://arxiv.org/abs/1703.03208
+
 [7] S. Albawi, T. A. Mohammed and S. Al-Zawi, "Understanding of a convolutional neural network," 2017 International Conference on Engineering and Technology (ICET), 2017, pp. 1-6, doi: 10.1109/ICEngTechnol.2017.8308186.
+
 [8] K. N. Raju and K. S. P. Reddy, "Comparative study of Structural Similarity Index (SSIM) by using different edge detection approaches on live video frames for different color models," 2017 International Conference on Intelligent Computing, Instrumentation and Control Technologies (ICICICT), 2017, pp. 932-937, doi: 10.1109/ICICICT1.2017.8342690.
+
 [9] Wang X. et al. (2019) ESRGAN: Enhanced Super-Resolution Generative Adversarial Networks. In: Leal-Taixé L., Roth S. (eds) Computer Vision – ECCV 2018 Workshops. ECCV 2018. Lecture Notes in Computer Science, vol 11133. Springer, Cham. https://doi.org/10.1007/978-3-030-11021-5_5
