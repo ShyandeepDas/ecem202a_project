@@ -44,7 +44,7 @@ We have also implemented the ESRGAN[] along with our reconstructor CNN to implem
 
 We have trained our network on Three different levels of sampling- 5%, 15%, 25%. After training we ran the model on a plethora of input sampling levels and plot their SSIM value in a graph. As we can see the network trained with 25% sampling works the best and we get a higher SSIM value at the output for most images. The only exception being when input sampling very low (5%-15%) proportion to the original image. In these cases, as expected, the network trained with 5% sampling does a better job. However, we were getting better results throughout the curve from a 5% trained network than we got from the 15% trained one. From this evaluation we can conclude for a scenario where only very low sampling input is expected, our model trained on 5% sampling should be used. However, if higher sampling is possible, we can use a 25% sampled to get better reconstructions. Fig.4 plots the three CNNs and their performance on a test data with wide range of input sampling.
 
-![ssim](https://user-images.githubusercontent.com/93070088/145702012-4a5972f1-ec08-4e83-9ca1-13f397601771.PNG)
+   ![ssim](https://user-images.githubusercontent.com/93070088/145702012-4a5972f1-ec08-4e83-9ca1-13f397601771.PNG)
 
 # 5. Discussion and Conclusions
 
