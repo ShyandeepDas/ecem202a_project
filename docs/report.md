@@ -28,11 +28,21 @@ Similar approaches already exist to imitate compressive sensing using a neural n
 
 # 3. Technical Approach
 
-One of the main objectives of the model was to reduce the computation required at the input of our neural network. To achieve this we used a completely randomized sampling of the input image. We created a matrix that has a number of elements that is some proportion (say 25%) of original pixel size and only samples the indexes present as elements of the sampling matrix. The rest of the pixels (here 75%) are masked. This process of random pixel selection is much lighter computationally, as a result, should work on very low-level sensor boards. This sampled image and the Sampling matrix used for the sampling are concatenated and sent as input to a Convolutional Neural Network. The CNN takes in the sampled image and the 'Mask' matrix and (after training) produces an output that is a reconstructed original image. The Architecture used in the project is a CNN with Four convonutional layers (Fig.1).
+One of the main objectives of the model was to reduce the computation required at the input of our neural network. To achieve this we used a completely randomized sampling of the input image. We created a matrix that has a number of elements that is some proportion (say 25%) of original pixel size and only samples the indexes present as elements of the sampling matrix. The rest of the pixels (here 75%) are masked. This process of random pixel selection is much lighter computationally, as a result, should work on very low-level sensor boards. This sampled image and the Sampling matrix used for the sampling are concatenated and sent as input to a Convolutional Neural Network. The CNN takes in the sampled image and the 'Mask' matrix and (after training) produces an output that is a reconstructed original image.  The architecture used in the project is a CNN with Four convolutional layers (Fig.1).
+
 ![CNN pic](https://user-images.githubusercontent.com/93070088/145699188-036723d6-632e-46e1-97f3-6a8af608c7ce.jpg)
+
 After the network is trained, it is capable quite accurate reconstruction of a randondomly sampled image. Fig.2 consists of some examples of regenrated outputs. Fig.2(a) images are the sampled image Fig.2(b) is the mask used to sample said image, Fig.2(c) is the output of model and Fig.2(d) represents the original image that the model tries to recreate. Our model has achieved a SSIM of xx on new images. The training was done on a dataset of 8123 images with 7123 training and 1000 testing split.
 
-# 4. Evaluation and Results
+![PlaneBirdgit](https://user-images.githubusercontent.com/93070088/145700969-04e0fbf7-5bdd-4442-a19f-fb2159c1f3b4.jpg)
+[imageSunglowa](https://user-images.githubusercontent.com/93070088/145701007-ca472cbe-548b-4bb2-a3ae-85e35e992f0a.png)
+
+We have also implemented the ESRGAN[] along with our reconstructor CNN to implement super-resolution. We send the output of our CNN as an input of the ESRGAN to generate a higher resolution final output. The ESRGAN is a well-cited excellent super-resolution model, so we tried to implement that in our pipeline to get better results.
+
+# 4. Evaluation and Results!
+
+
+
 
 # 5. Discussion and Conclusions
 
