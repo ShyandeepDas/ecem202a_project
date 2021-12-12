@@ -36,7 +36,9 @@ After the network is trained, it is capable quite accurate reconstruction of a r
 
 ![GitResults](https://user-images.githubusercontent.com/93070088/145701086-474f6350-2aef-42c0-ba38-40f2f10fc3d2.png)
 
-We have also implemented the ESRGAN[] along with our reconstructor CNN to implement super-resolution. We send the output of our CNN as an input of the ESRGAN to generate a higher resolution final output. The ESRGAN is a well-cited excellent super-resolution model, so we tried to implement that in our pipeline to get better results.
+We have also implemented the ESRGAN[] along with our reconstructor CNN to implement super-resolution. We send the output of our CNN as an input of the ESRGAN to generate a higher resolution final output. The ESRGAN is a well-cited excellent super-resolution model, so we tried to implement that in our pipeline to get better results. Fig.3 shows the final output of our pipeline when the reconstructed image is enhanced with the ESRGAN. Fig.2(c) is the 64x64 reconstructed output and the Fig.3 is the 128x128 is the final output after superresolution with ESRGAN.
+
+![ESRsunflowa](https://user-images.githubusercontent.com/93070088/145701322-be42556c-9d86-4517-bc50-ec7c91aa95c1.png)
 
 # 4. Evaluation and Results
 
