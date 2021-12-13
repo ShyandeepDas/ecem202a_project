@@ -62,7 +62,9 @@ So, we use approach-B where we developed a convolutional neural network model in
 
 After the network is trained, it is capable of quite an accurate reconstruction of a randomly sampled image. Fig.2 consists of some examples of regenerated outputs. Fig.o(a) images are the sampled images Fig.o(b) is the masks used to sample said images, Fig.o(c) is the output of the model, and Fig.2(d) represents the original image that the model tries to recreate. Our model has achieved an SSIM of 0.99+ on reconstructed images. The training validation was done on a dataset of 12000 training and 1500 testing split.
 
-![apprach2 output](https://user-images.githubusercontent.com/93070088/145753052-2eb83d2f-91ce-46ca-8a92-db7d4b033228.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/93070088/145753052-2eb83d2f-91ce-46ca-8a92-db7d4b033228.png" />
+</p>
 
 <p align="center">
     Fig(o)
