@@ -28,7 +28,19 @@ Similar approaches already exist to imitate compressive sensing using a neural n
 
 # 3. Technical Approach
 
-In this project we tried to address the issue of hardware and bandwidth-limited surveillance systems. We use two approaches, in Apprach-A we used Compressive sensing using L1 minimization and then used the ESRGAN [9] for superresolution to generate the final high-resolution output. We successfully reconstruct an image from a fraction of the original pixel information and compensated for bad camera quality using super-resolution. 
+In this project we tried to address the issue of hardware and bandwidth-limited surveillance systems. We use two approaches, in Apprach-A we used Compressive sensing using L1 minimization and then used the ESRGAN [9] for superresolution to generate the final high-resolution output. We successfully reconstruct an image from a fraction of the original pixel information and compensated for bad camera quality using super-resolution.
+
+Linear Program for Compressive Sensing 
+Prior information - x is sparse
+v = A x
+where
+  A is a given m x n measurement matrix  
+  x  is an unknown signal that one needs to recover from v  
+min 
+||x'||  (L1 norm of x')
+subject to A x' =  v
+
+The image is moved to frequency domain using Fourier basis. We used Limited-Memory BFGS to determine the components in every channel(RGB) which after using Inverse Fourier transform yields the reconstructed image. We believe if L1 norm was minimized in one-go across all the channels we might produce better results. 
 
 ![figx](https://user-images.githubusercontent.com/93070088/145752283-20fbacf0-af59-4255-9803-12c11f3d3e03.png)
 /                                                                                       Fig(x)
