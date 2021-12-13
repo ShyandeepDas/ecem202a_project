@@ -86,7 +86,9 @@ The approach a with L1 norm minimization reconstructed the orginal image very we
     Fig(j)
 </p>
 
-![ssim](https://user-images.githubusercontent.com/93070088/145702012-4a5972f1-ec08-4e83-9ca1-13f397601771.PNG)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/93070088/145702012-4a5972f1-ec08-4e83-9ca1-13f397601771.PNG" />
+</p>
 
 
 # 5. Discussion and Conclusions
