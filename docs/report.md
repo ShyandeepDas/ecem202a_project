@@ -42,8 +42,7 @@ min L1 norm of x', subject to A x' =  v
 
 
 The image is moved to frequency domain using Fourier basis. We used Limited-Memory BFGS to determine the components in every channel(RGB) which after using Inverse Fourier transform yields the reconstructed image. We believe if L1 norm was minimized in one-go across all the channels we might produce better results. 
-
-![figx](https://user-images.githubusercontent.com/93070088/145752283-20fbacf0-af59-4255-9803-12c11f3d3e03.png)
+![figx](https://user-images.githubusercontent.com/93070088/145756392-dc27b44b-e104-475e-be4c-70e26b4244a4.png)
 /                                                                                       Fig(x)
 
 However eventhough the approach found good results in high resolution images, we were seeing significant artifact in the lower resolution (64x64) images as seen in Fig(y).
