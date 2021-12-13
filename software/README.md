@@ -1,6 +1,4 @@
-Add your project's code to this folder.
-
-#Instructions on testing the code:
+##Instructions on testing the code:
 
 Upload the notebook to colab and perform following steps!
 
