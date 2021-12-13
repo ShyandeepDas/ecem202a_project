@@ -1,4 +1,11 @@
-##Instructions on testing the code:
+
+<h1>How to run the Approach A and Approach B code</h1> 
+
+<h2>Approach-A CS L1 norm with ESRGAN</h2>
+
+Upload the notebook to colab, follow the instructions in the notebook comments.
+
+<h2>Approach-B ConvCS reconstruction with ESRGAN super-resolution</h2>
 
 Upload the notebook to colab and perform following steps!
 
@@ -12,6 +19,7 @@ Upload the notebook to colab and perform following steps!
 
 ![piktor](https://user-images.githubusercontent.com/93070088/145748578-4d35e06c-b3a9-4a9c-acdd-feda0d97b1f6.png)
 
-5)	From utils folder in Github, copy model Parameters file ,”20.pth” from modelParameters25.0, modelParameters15.0 and modelParameters5.0 and upload them to corresponding folders in colab
+5)	copy model Parameters file ,”20.pth” from modelParameters25.0, modelParameters15.0 and modelParameters5.0 folder and upload them to corresponding folders in colab
 6)	Run all cells below
 7)	You can download the super resolution image from “/content/Real-ESRGAN/results”
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
