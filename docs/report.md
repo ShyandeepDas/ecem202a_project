@@ -38,17 +38,23 @@ However eventhough the approach found good results in high resolution images, we
 ![figy](https://user-images.githubusercontent.com/93070088/145752362-5aa268dc-076f-4951-a84c-4393eece65d9.png)
 /                                                                                       Fig(y)
 
-So, we developed a deep neural network model (operational in the reciever end) instead of using the L1 minimization. One of the main objectives of the model was to reduce the computation required prior to the input of our neural network. To achieve this we used a completely randomized sampling of the input image. We created a matrix that has a number of elements that is some proportion (say 25%) of original pixel size and only samples the indexes present as elements of the sampling matrix. The rest of the pixels (here 75%) are masked. This process of random pixel selection is much lighter computationally, as a result, should work on very low-level sensor boards. This sampled image and the Sampling matrix used for the sampling are concatenated and sent as input to a Convolutional Neural Network. The training of this CNN takes in the sampled image and the 'Mask' matrix and both SSIM and Mean Square Error were used to train the network. After training the ConvCS produces an output that is a reconstructed original image. The architecture designed in the project dubbed ConvCS is a CNN with Four convolutional layers (Fig.1).
+So, we use approach-B where we developed a convolutional neural network model instead of using the L1 minimization. One of the main objectives of the model was to reduce the computation required prior to the input of our neural network. To achieve this we used a completely randomized sampling of the input image. We created a matrix that has a number of elements that is some proportion (say 25%) of original pixel size and only samples the indexes present as elements of the sampling matrix. The rest of the pixels (here 75%) are masked. This process of random pixel selection is much lighter computationally, as a result, should work on very low-level sensor boards. This sampled image and the sampling matrix used for the sampling are concatenated and sent as input to a Convolutional Neural Network. The training of this CNN takes in the sampled image and the 'Mask' matrix and both SSIM and Mean Square Error were used to train the network. After training the ConvCS produces an output that is a reconstructed original image. The architecture designed in the project dubbed ConvCS is a CNN with Four convolutional layers (Fig.z).
 
 ![CNN pic](https://user-images.githubusercontent.com/93070088/145699188-036723d6-632e-46e1-97f3-6a8af608c7ce.jpg)
 
-After the network is trained, it is capable of quite an accurate reconstruction of a randomly sampled image. Fig.2 consists of some examples of regenerated outputs. Fig.2(a) images are the sampled images Fig.2(b) is the masks used to sample said images, Fig.2(c) is the output of the model, and Fig.2(d) represents the original image that the model tries to recreate. Our model has achieved an SSIM of 0.99+ on reconstructed images. The training validation was done on a dataset of 8123 images with 7123 training and 1000 testing split.
+/                                                                                 Fig.z
 
-![GitResults](https://user-images.githubusercontent.com/93070088/145701451-2d7cfbc1-986b-4a1b-84d4-3bbe8c3dedf7.png)
+After the network is trained, it is capable of quite an accurate reconstruction of a randomly sampled image. Fig.2 consists of some examples of regenerated outputs. Fig.o(a) images are the sampled images Fig.o(b) is the masks used to sample said images, Fig.o(c) is the output of the model, and Fig.2(d) represents the original image that the model tries to recreate. Our model has achieved an SSIM of 0.99+ on reconstructed images. The training validation was done on a dataset of 12000 training and 1500 testing split.
 
-We have also implemented the ESRGAN[9] along with our reconstructor CNN (ConvCS) to implement super-resolution. We send the output of the ConvCS as an input of the ESRGAN to generate a higher resolution final output. The ESRGAN is a well-cited excellent super-resolution model, so we tried to implement its magic in our pipeline to get better results. Fig.3 shows the final output of our pipeline when the reconstructed image is enhanced with the ESRGAN. Fig.2(c) is the 64x64 reconstructed output and the Fig.3 is the 128x128 is the final output after superresolution with ESRGAN.
+![apprach2 output](https://user-images.githubusercontent.com/93070088/145753052-2eb83d2f-91ce-46ca-8a92-db7d4b033228.png)
 
-![ESRsunflowa](https://user-images.githubusercontent.com/93070088/145701458-85399e36-8850-463c-a449-d210a11f0fca.png)
+/                                                                                         Fig.o
+
+We have also implemented the ESRGAN[9] along with our reconstructor CNN (ConvCS) to implement super-resolution. We send the output of the ConvCS as an input of the ESRGAN to generate a higher resolution final output. The ESRGAN is a well-cited excellent super-resolution model, so we tried to implement its magic in our pipeline to get better results. Fig.p shows the final output of our pipeline when the reconstructed image is enhanced with the ESRGAN. Fig.o(c) is the 64x64 reconstructed output and the Fig.3 is the 128x128 is the final output after superresolution with ESRGAN.
+
+![esrganZ](https://user-images.githubusercontent.com/93070088/145753173-f54131b3-7779-4d51-bbe6-055bfa923783.png)
+
+/ Fig.p
 
 # 4. Evaluation
 
