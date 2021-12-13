@@ -28,10 +28,14 @@ Similar approaches already exist to imitate compressive sensing using a neural n
 
 # 3. Technical Approach
 
-In this project we tried to address the issue of hardware and bandwidth-limited surveillance systems. We use two approaches, in Apprach-A we used Compressive sensing using L1 minimization and then used the ESRGAN [9] for superresolution to generate the final high-resolution output. We successfully reconstruct an image from a fraction of the original pixel information and compensated for bad camera quality using super-resolution. However eventhough the approach found good results in high resolution images, we were seeing significant artifact in the lower resolution (64x64) images as seen in Fig(y).
+In this project we tried to address the issue of hardware and bandwidth-limited surveillance systems. We use two approaches, in Apprach-A we used Compressive sensing using L1 minimization and then used the ESRGAN [9] for superresolution to generate the final high-resolution output. We successfully reconstruct an image from a fraction of the original pixel information and compensated for bad camera quality using super-resolution. 
 
+![figx](https://user-images.githubusercontent.com/93070088/145752283-20fbacf0-af59-4255-9803-12c11f3d3e03.png)
+/                                                                                       Fig(x)
+However eventhough the approach found good results in high resolution images, we were seeing significant artifact in the lower resolution (64x64) images as seen in Fig(y).
 
-                                                                                Fig(y)
+![figy](https://user-images.githubusercontent.com/93070088/145752362-5aa268dc-076f-4951-a84c-4393eece65d9.png)
+/                                                                                       Fig(y)
 So, we developed a deep neural network model (operational in the reciever end) instead of using the L1 minimization. One of the main objectives of the model was to reduce the computation required prior to the input of our neural network. To achieve this we used a completely randomized sampling of the input image. We created a matrix that has a number of elements that is some proportion (say 25%) of original pixel size and only samples the indexes present as elements of the sampling matrix. The rest of the pixels (here 75%) are masked. This process of random pixel selection is much lighter computationally, as a result, should work on very low-level sensor boards. This sampled image and the Sampling matrix used for the sampling are concatenated and sent as input to a Convolutional Neural Network. The training of this CNN takes in the sampled image and the 'Mask' matrix and both SSIM and Mean Square Error were used to train the network. After training the ConvCS produces an output that is a reconstructed original image. The architecture designed in the project dubbed ConvCS is a CNN with Four convolutional layers (Fig.1).
 
 ![CNN pic](https://user-images.githubusercontent.com/93070088/145699188-036723d6-632e-46e1-97f3-6a8af608c7ce.jpg)
