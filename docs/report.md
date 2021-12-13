@@ -56,7 +56,9 @@ So, we use approach-B where we developed a convolutional neural network model in
 
 ![ConvCS_Arc](https://user-images.githubusercontent.com/93070088/145757451-9cb51564-4d8e-4634-b70a-219753f74296.jpg)
 
-/                                                                                 Fig.z
+<p align="center">
+    Fig(z)
+</p>
 
 After the network is trained, it is capable of quite an accurate reconstruction of a randomly sampled image. Fig.2 consists of some examples of regenerated outputs. Fig.o(a) images are the sampled images Fig.o(b) is the masks used to sample said images, Fig.o(c) is the output of the model, and Fig.2(d) represents the original image that the model tries to recreate. Our model has achieved an SSIM of 0.99+ on reconstructed images. The training validation was done on a dataset of 12000 training and 1500 testing split.
 
@@ -78,11 +80,15 @@ We have also implemented the ESRGAN[9] along with our reconstructor CNN (ConvCS)
 
 We have trained our network on Three different levels of sampling- 5%, 15%, 25%. After training, we ran the model on a plethora of input sampling levels and plot the SSIM of these reconstructed images (against original) in a graph. As we can see the network trained with 25% sampling works the best and we get a higher SSIM value at the output for most images. The only exception is when input sampling very low (5%-15%) proportion to the original image. In these cases, as expected, the network trained with 5% sampling does a better job. However, we were getting better results throughout the curve from a 5% trained network than we got from the 15% trained one. From this evaluation we can conclude for a scenario where only very low sampling input is expected, our model trained on 5% sampling should be used. However, if higher sampling is possible, we can use a 25% sample trained ConvCS to get better reconstructions. Fig.j plots the three differently trained ConvCSs and their performance on test data with a wide range of input sampling.
 
-![ssim](https://user-images.githubusercontent.com/93070088/145702012-4a5972f1-ec08-4e83-9ca1-13f397601771.PNG)
+<p align="center">
+    ![ssim](https://user-images.githubusercontent.com/93070088/145702012-4a5972f1-ec08-4e83-9ca1-13f397601771.PNG)
+</p>
 <p align="center">
     Fig(j)
 </p>
-![pik3](https://user-images.githubusercontent.com/93070088/145750448-e2bc2398-a4a2-4f8d-a74a-11070d5c6e73.png)
+<p align="center">
+    ![pik3](https://user-images.githubusercontent.com/93070088/145750448-e2bc2398-a4a2-4f8d-a74a-11070d5c6e73.png)
+</p>
 
 # 5. Discussion and Conclusions
 
