@@ -83,16 +83,20 @@ We have also implemented the ESRGAN[9] along with our reconstructor CNN (ConvCS)
 
 # 4. Evaluation
 
-The approach with L1 norm minimization reconstructed the original image very well for high-resolution images with. However, as mentioned before it faces problems when reconstructing a very low-resolution image (64x64), it yeilds 0.9988 SSIM as shown in fig.J. For the second approach, we have trained our network on three different levels of sampling- 5%, 15%, 25%. After training, we ran the model on a plethora of input sampling levels and plot the SSIM of these reconstructed images (against original) in a graph (Fig.K). As we can see the network trained with 25% sampling works the best and we get a higher SSIM value at the output for most images. The only exception is when input sampling very low (5%-15%) proportion to the original image. In these cases, as expected, the network trained with 5% sampling does a better job. However, we were getting better results throughout the curve from a 5% trained network than we got from the 15% trained one. From this evaluation we can conclude for a scenario where only very low sampling input is expected, our model trained on 5% sampling should be used. However, if higher sampling is possible, we can use a 25% sample trained ConvCS to get better reconstructions. Fig.k plots the three differently trained ConvCSs and their performance on test data with a wide range of input sampling. However, we do see a considerable amount of color shift in the reconstructed image after reconstruction in Approach-B. We got much better color accuracy after using mean square error + SSIM instead of just using SSIM while training the network
+The approach with L1 norm minimization reconstructed the original image very well for high-resolution images with. However, as mentioned before it faces problems when reconstructing a very low-resolution image (64x64), it yeilds 0.9988 SSIM as shown in Fig.6. For the second approach, we have trained our network on three different levels of sampling- 5%, 15%, 25%. After training, we ran the model on a plethora of input sampling levels and plot the SSIM of these reconstructed images (against original) in a graph (Fig.7). As we can see the network trained with 25% sampling works the best and we get a higher SSIM value at the output for most images. The only exception is when input sampling very low (5%-15%) proportion to the original image. In these cases, as expected, the network trained with 5% sampling does a better job. However, we were getting better results throughout the curve from a 5% trained network than we got from the 15% trained one. From this evaluation we can conclude for a scenario where only very low sampling input is expected, our model trained on 5% sampling should be used. However, if higher sampling is possible, we can use a 25% sample trained ConvCS to get better reconstructions. Fig.k plots the three differently trained ConvCSs and their performance on test data with a wide range of input sampling. However, we do see a considerable amount of color shift in the reconstructed image after reconstruction in Approach-B. We got much better color accuracy after using mean square error + SSIM instead of just using SSIM while training the network
 
 ![pik3](https://user-images.githubusercontent.com/93070088/145750448-e2bc2398-a4a2-4f8d-a74a-11070d5c6e73.png)
 
 <p align="center">
-    Fig(j)
+    Fig.6
 </p>
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/93070088/145702012-4a5972f1-ec08-4e83-9ca1-13f397601771.PNG" />
+</p>
+
+<p align="center">
+    Fig.7
 </p>
 
 
