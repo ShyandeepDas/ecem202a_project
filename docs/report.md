@@ -9,7 +9,7 @@
 
 # Abstract
 
-In the information age, it is essential to share a massive amount of data for proper surveillance and operation of any plant. However, it is often the case that the site has a lot of surveillance needs and as a result, it becomes difficult to account for bandwidths of all the cameras and sensors. The bandwidth limitation is not the only issue, however. The quality of the camera is often not very good, as a result, the image is noisy. There exist many solutions to the issue, most of them try to send partial data from the sensors to a server where it is reconstructed and enhanced to produce usable results. In this project, we aim to use such a mechanism using tools such as compressive sensing and deep learning to recreate an image from incomplete information and increase its resolution to get better results. We further introduce our own Convolutional Neural Network (CNN) for regenerating an image from randomly sampled images. This eliminates the need for any computationally heavy methods in the input site and the server using this CNN can reconstruct the image. We have compared our model's results while training it with a different amount of sampling at the input. Then we tested these differently trained networks performances on different input sampling sizes to find the best fit.
+In the information age, it is essential to share a massive amount of data for proper surveillance and operation of any plant. However, it is often the case that the site has a lot of surveillance needs and as a result, it becomes difficult to account for bandwidths of all the cameras and sensors. The bandwidth limitation is not the only issue, however. The quality of the camera is often not very good, as a result, the image is noisy. There exist many solutions to the issue, most of them try to send partial data from the sensors to a server where it is reconstructed and enhanced to produce usable results. In this project, we aim to use such a mechanism using tools such as compressive sensing and deep learning to recreate an image from incomplete information and increase its resolution to get better results. We further introduce our own Convolutional Neural Network (CNN) for regenerating an image from randomly sampled images. This eliminates the need for any computationally heavy methods in the input site. We have compared our model's results while training it with a different amount of sampling at the input. Then we tested these differently trained networks performances on different input sampling sizes to find the best fit.
 
 # 1. Introduction
 
@@ -30,15 +30,24 @@ Similar approaches already exist to imitate compressive sensing using a neural n
 
 In this project we tried to address the issue of hardware and bandwidth-limited surveillance systems. We use two approaches, in Apprach-A we used Compressive sensing using L1 minimization and then used the ESRGAN [9] for superresolution to generate the final high-resolution output. We successfully reconstruct an image from a fraction of the original pixel information and compensated for bad camera quality using super-resolution.
 
-Linear Program for Compressive Sensing 
+Linear Program for Compressive Sensing
+
 Prior information - x is sparse
+
 v = A x
+
 where
-  A is a given m x n measurement matrix  
-  x  is an unknown signal that one needs to recover from v  
-min 
+
+  A is a given m x n measurement matrix
+  
+  x  is an unknown signal that one needs to recover from v
+  
+min
+
 ||x'||  (L1 norm of x')
+
 subject to A x' =  v
+
 
 The image is moved to frequency domain using Fourier basis. We used Limited-Memory BFGS to determine the components in every channel(RGB) which after using Inverse Fourier transform yields the reconstructed image. We believe if L1 norm was minimized in one-go across all the channels we might produce better results. 
 
