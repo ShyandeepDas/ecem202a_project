@@ -97,7 +97,7 @@ The approach with L1 norm minimization reconstructed the original image very wel
 
 
 # 5. Discussion and Conclusions
-<p>
+<p text-align: "justify">
 In this project, we have introduced a Convolutional Neural Network to reconstruct a sampled image dubbed ConvCS with a fraction of the original pixels. We have used a complete randomizer mask to sample the original image. As an evaluation, we have trained the network with different proportions of input samplers. We used 10%, 25%, 30% randomized pixel samplers to train our network and compared each of their performances with different proportions sampled inputs(5%-40%). We measure the SSIM for our performance analysis, we measure the SSIM of the network output images with the original images to get a sense of the accuracy of reconstruction. Even though our model can reproduce an output that is quite similar to the original image, there is quite a bit of information loss and color shift present in the output images. However, we found training the network with both SSIM and Mean Square Error yielded better results than training it only SSIM, so it may be worthwhile trying other losses such as MS-SSIM, PSNR, Perceptual loss. Also, instead of using one the ConvCS for reconstruction then the ESRGAN for superresolution, it would be a better solution to append reconstruction and superresolution into a single network. We can also try the reconstruction of images taken from single sample cameras using the ConvCS in the future.</p>
 
 # 6. References
