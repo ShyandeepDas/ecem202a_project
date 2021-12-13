@@ -31,7 +31,7 @@ Similar approaches already exist to imitate compressive sensing using a neural n
 In this project, we tried to address the issue of hardware and bandwidth-limited surveillance systems. We use two approaches, in Approach-A we used Compressive sensing using L1 minimization and then used the ESRGAN [9] for superresolution to generate the final high-resolution output. We successfully reconstruct an image from a fraction of the original pixel information and compensated for bad camera quality using super-resolution.
  
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/93070088/145775822-f0aef2a5-919c-4779-b04f-d9c58d2d88a6.png" />
+  <img src="https://user-images.githubusercontent.com/93070088/145776335-deb83e34-04c3-49a7-b84c-59b0af20b02a.png" />
 </p>
 
 The image is moved to frequency domain using Fourier basis. We used Limited-Memory BFGS to determine the components in every channel(RGB) which after using Inverse Fourier transform yields the reconstructed image[Fig.1]. We believe if L1 norm was minimized in one-go across all the channels we might produce better results. 
