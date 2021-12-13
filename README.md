@@ -1,4 +1,4 @@
-# ecem202a_project
+# ecem202a_project: Image Supersampling using pixel subsampling
 This is repository template for UCLA ECEM202A / CSM213A projects.
 
 Use the folders as follows:
