@@ -28,18 +28,11 @@ Similar approaches already exist to imitate compressive sensing using a neural n
 
 # 3. Technical Approach
 
-In this project we tried to address the issue of hardware and bandwidth-limited surveillance systems. We use two approaches, in Apprach-A we used Compressive sensing using L1 minimization and then used the ESRGAN [9] for superresolution to generate the final high-resolution output. We successfully reconstruct an image from a fraction of the original pixel information and compensated for bad camera quality using super-resolution.
+In this project, we tried to address the issue of hardware and bandwidth-limited surveillance systems. We use two approaches, in Approach-A we used Compressive sensing using L1 minimization and then used the ESRGAN [9] for superresolution to generate the final high-resolution output. We successfully reconstruct an image from a fraction of the original pixel information and compensated for bad camera quality using super-resolution.
  
 <p align="center">
-Linear Program for Compressive Sensing<br>
-Prior information x is sparse<br>
-v = A x<br>
-where, A is a given mxn measurement matrix<br>
-x  is an unknown signal that one needs to recover from v <br>
-min L1 norm of x'<br>
-subject to A x' =  v<br>
+  <img src="https://user-images.githubusercontent.com/93070088/145775822-f0aef2a5-919c-4779-b04f-d9c58d2d88a6.png" />
 </p>
-
 
 The image is moved to frequency domain using Fourier basis. We used Limited-Memory BFGS to determine the components in every channel(RGB) which after using Inverse Fourier transform yields the reconstructed image[Fig.1]. We believe if L1 norm was minimized in one-go across all the channels we might produce better results. 
 
@@ -63,7 +56,7 @@ So, we use approach-B where we developed a convolutional neural network model in
     Fig.3
 </p>
 
-After the network is trained, it is capable of quite an accurate reconstruction of a randomly sampled image. Fig.4 consists of some examples of regenerated outputs. Fig.4 left most images are the sampled images the second most left are the masks used to sample said images, the second right most are the output of the model, and right mist represents the original image that the model tries to recreate. Our model has achieved an SSIM of 0.99+ on reconstructed images. The training validation was done on a dataset of 12000 training and 1500 testing split.
+After the nAfter the network is trained, it is capable of quite an accurate reconstruction of a randomly sampled image. Fig.4 consists of some examples of reconstructed outputs. Fig.4 left most images are the sampled images, the second most left are the masks used to sample said images, the second rightmost is the output of the model, and the rightmost represents the original image that the model tries to recreate. Our model has achieved an SSIM of 0.999+ on reconstructed images. The training and testing were done on an ImageNet dataset of 12000 training and 1500 testing split.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/93070088/145753052-2eb83d2f-91ce-46ca-8a92-db7d4b033228.png" />
@@ -73,7 +66,7 @@ After the network is trained, it is capable of quite an accurate reconstruction 
     Fig.4
 </p>
 
-We have also implemented the ESRGAN[9] along with our reconstructor CNN (ConvCS) to implement super-resolution. We send the output of the ConvCS as an input of the ESRGAN to generate a higher resolution final output. The ESRGAN is a well-cited excellent super-resolution model, so we tried to implement its magic in our pipeline to get better results. Fig.p shows the final output of our pipeline when the reconstructed image is enhanced with the ESRGAN. The Fig.5 is the 128x128 is the final output (after Fig.4 reconstruction) after superresolution with ESRGAN.
+We have also implemented the ESRGAN[9] along with our reconstructor CNN (ConvCS) to implement super-resolution. We send the output of the ConvCS as an input of the ESRGAN to generate a higher resolution final output. The ESRGAN is a well-cited excellent super-resolution model, so we tried to implement its magic in our pipeline to get better results. Fig.5 shows the final output of our pipeline when the reconstructed image is enhanced with the ESRGAN. The Fig.5 is the 128x128 is the final output (after Fig.4 reconstruction) after superresolution with ESRGAN.
 
 ![esrganZ](https://user-images.githubusercontent.com/93070088/145753173-f54131b3-7779-4d51-bbe6-055bfa923783.png)
 
