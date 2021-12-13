@@ -41,44 +41,44 @@ subject to A x' =  v<br>
 </p>
 
 
-The image is moved to frequency domain using Fourier basis. We used Limited-Memory BFGS to determine the components in every channel(RGB) which after using Inverse Fourier transform yields the reconstructed image. We believe if L1 norm was minimized in one-go across all the channels we might produce better results. 
+The image is moved to frequency domain using Fourier basis. We used Limited-Memory BFGS to determine the components in every channel(RGB) which after using Inverse Fourier transform yields the reconstructed image[Fig.1]. We believe if L1 norm was minimized in one-go across all the channels we might produce better results. 
 
 ![figx](https://user-images.githubusercontent.com/93070088/145756392-dc27b44b-e104-475e-be4c-70e26b4244a4.png)
 <p align="center">
-    Fig(x)
+    Fig.1
 </p>
 
-However eventhough the approach found good results in high resolution images, we were seeing significant artifacts in the lower resolution (64x64) images as seen in Fig(y).
+However eventhough the approach found good results in high resolution images, we were seeing significant artifacts in the lower resolution (64x64) images as seen in Fig.2.
 
 ![figy](https://user-images.githubusercontent.com/93070088/145752362-5aa268dc-076f-4951-a84c-4393eece65d9.png)
 <p align="center">
-    Fig(y)
+    Fig.2
 </p>
 
-So, we use approach-B where we developed a convolutional neural network model instead of using the L1 minimization. One of the main objectives of the model was to reduce the computation required prior to the input of our neural network. To achieve this we used a completely randomized sampling of the input image. We created a matrix that has a number of elements that is some proportion (say 25%) of original pixel size and only samples the indexes present as elements of the sampling matrix. The rest of the pixels (here 75%) are masked. This sampled image and the sampling matrix used for the sampling are concatenated and sent as input to a Convolutional Neural Network. The training of this CNN takes in the sampled image and the 'Mask' matrix and both SSIM and Mean Square Error were used to train the network. After training the ConvCS produces an output that is a reconstructed original image. The architecture designed in the project dubbed ConvCS is a CNN with Four convolutional layers (Fig.z).
+So, we use approach-B where we developed a convolutional neural network model instead of using the L1 minimization. One of the main objectives of the model was to reduce the computation required prior to the input of our neural network. To achieve this we used a completely randomized sampling of the input image. We created a matrix that has a number of elements that is some proportion (say 25%) of original pixel size and only samples the indexes present as elements of the sampling matrix. The rest of the pixels (here 75%) are masked. This sampled image and the sampling matrix used for the sampling are concatenated and sent as input to a Convolutional Neural Network. The training of this CNN takes in the sampled image and the 'Mask' matrix and both SSIM and Mean Square Error were used to train the network. After training the ConvCS produces an output that is a reconstructed original image. The architecture designed in the project dubbed ConvCS is a CNN with Four convolutional layers Fig.3.
 
 ![ConvCS_Arc](https://user-images.githubusercontent.com/93070088/145757451-9cb51564-4d8e-4634-b70a-219753f74296.jpg)
 
 <p align="center">
-    Fig(z)
+    Fig.3
 </p>
 
-After the network is trained, it is capable of quite an accurate reconstruction of a randomly sampled image. Fig.2 consists of some examples of regenerated outputs. Fig.o(a) images are the sampled images Fig.o(b) is the masks used to sample said images, Fig.o(c) is the output of the model, and Fig.2(d) represents the original image that the model tries to recreate. Our model has achieved an SSIM of 0.99+ on reconstructed images. The training validation was done on a dataset of 12000 training and 1500 testing split.
+After the network is trained, it is capable of quite an accurate reconstruction of a randomly sampled image. Fig.4 consists of some examples of regenerated outputs. Fig.4 left most images are the sampled images the second most left are the masks used to sample said images, the second right most are the output of the model, and right mist represents the original image that the model tries to recreate. Our model has achieved an SSIM of 0.99+ on reconstructed images. The training validation was done on a dataset of 12000 training and 1500 testing split.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/93070088/145753052-2eb83d2f-91ce-46ca-8a92-db7d4b033228.png" />
 </p>
 
 <p align="center">
-    Fig(o)
+    Fig.4
 </p>
 
-We have also implemented the ESRGAN[9] along with our reconstructor CNN (ConvCS) to implement super-resolution. We send the output of the ConvCS as an input of the ESRGAN to generate a higher resolution final output. The ESRGAN is a well-cited excellent super-resolution model, so we tried to implement its magic in our pipeline to get better results. Fig.p shows the final output of our pipeline when the reconstructed image is enhanced with the ESRGAN. Fig.o(c) is the 64x64 reconstructed output and the Fig.3 is the 128x128 is the final output after superresolution with ESRGAN.
+We have also implemented the ESRGAN[9] along with our reconstructor CNN (ConvCS) to implement super-resolution. We send the output of the ConvCS as an input of the ESRGAN to generate a higher resolution final output. The ESRGAN is a well-cited excellent super-resolution model, so we tried to implement its magic in our pipeline to get better results. Fig.p shows the final output of our pipeline when the reconstructed image is enhanced with the ESRGAN. The Fig.5 is the 128x128 is the final output (after Fig.4 reconstruction) after superresolution with ESRGAN.
 
 ![esrganZ](https://user-images.githubusercontent.com/93070088/145753173-f54131b3-7779-4d51-bbe6-055bfa923783.png)
 
 <p align="center">
-    Fig(p)
+    Fig.5
 </p>
 
 # 4. Evaluation
