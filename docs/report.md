@@ -36,8 +36,6 @@ After the network is trained, it is capable of quite an accurate reconstruction 
 
 ![GitResults](https://user-images.githubusercontent.com/93070088/145701451-2d7cfbc1-986b-4a1b-84d4-3bbe8c3dedf7.png)
 
-![pik3](https://user-images.githubusercontent.com/93070088/145750448-e2bc2398-a4a2-4f8d-a74a-11070d5c6e73.png)
-
 We have also implemented the ESRGAN[9] along with our reconstructor CNN (ConvCS) to implement super-resolution. We send the output of the ConvCS as an input of the ESRGAN to generate a higher resolution final output. The ESRGAN is a well-cited excellent super-resolution model, so we tried to implement its magic in our pipeline to get better results. Fig.3 shows the final output of our pipeline when the reconstructed image is enhanced with the ESRGAN. Fig.2(c) is the 64x64 reconstructed output and the Fig.3 is the 128x128 is the final output after superresolution with ESRGAN.
 
 ![ESRsunflowa](https://user-images.githubusercontent.com/93070088/145701458-85399e36-8850-463c-a449-d210a11f0fca.png)
@@ -47,6 +45,8 @@ We have also implemented the ESRGAN[9] along with our reconstructor CNN (ConvCS)
 We have trained our network on Three different levels of sampling- 5%, 15%, 25%. After training, we ran the model on a plethora of input sampling levels and plot the SSIM of these reconstructed images (against original) in a graph. As we can see the network trained with 25% sampling works the best and we get a higher SSIM value at the output for most images. The only exception is when input sampling very low (5%-15%) proportion to the original image. In these cases, as expected, the network trained with 5% sampling does a better job. However, we were getting better results throughout the curve from a 5% trained network than we got from the 15% trained one. From this evaluation we can conclude for a scenario where only very low sampling input is expected, our model trained on 5% sampling should be used. However, if higher sampling is possible, we can use a 25% sample trained ConvCS to get better reconstructions. Fig.4 plots the three differently trained ConvCSs and their performance on test data with a wide range of input sampling.
 
 ![ssim](https://user-images.githubusercontent.com/93070088/145702012-4a5972f1-ec08-4e83-9ca1-13f397601771.PNG)
+
+![pik3](https://user-images.githubusercontent.com/93070088/145750448-e2bc2398-a4a2-4f8d-a74a-11070d5c6e73.png)
 
 # 5. Discussion and Conclusions
 
