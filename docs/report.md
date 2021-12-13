@@ -49,8 +49,9 @@ The image is moved to frequency domain using Fourier basis. We used Limited-Memo
 However eventhough the approach found good results in high resolution images, we were seeing significant artifact in the lower resolution (64x64) images as seen in Fig(y).
 
 ![figy](https://user-images.githubusercontent.com/93070088/145752362-5aa268dc-076f-4951-a84c-4393eece65d9.png)
-/                                                                                       Fig(y)
-
+<p align="center">
+    Fig(y)
+</p>
 So, we use approach-B where we developed a convolutional neural network model instead of using the L1 minimization. One of the main objectives of the model was to reduce the computation required prior to the input of our neural network. To achieve this we used a completely randomized sampling of the input image. We created a matrix that has a number of elements that is some proportion (say 25%) of original pixel size and only samples the indexes present as elements of the sampling matrix. The rest of the pixels (here 75%) are masked. This process of random pixel selection is much lighter computationally, as a result, should work on very low-level sensor boards. This sampled image and the sampling matrix used for the sampling are concatenated and sent as input to a Convolutional Neural Network. The training of this CNN takes in the sampled image and the 'Mask' matrix and both SSIM and Mean Square Error were used to train the network. After training the ConvCS produces an output that is a reconstructed original image. The architecture designed in the project dubbed ConvCS is a CNN with Four convolutional layers (Fig.z).
 
 ![ConvCS_Arc](https://user-images.githubusercontent.com/93070088/145757451-9cb51564-4d8e-4634-b70a-219753f74296.jpg)
@@ -61,20 +62,26 @@ After the network is trained, it is capable of quite an accurate reconstruction 
 
 ![apprach2 output](https://user-images.githubusercontent.com/93070088/145753052-2eb83d2f-91ce-46ca-8a92-db7d4b033228.png)
 
-/                                                                                         Fig.o
+<p align="center">
+    Fig(o)
+</p>
 
 We have also implemented the ESRGAN[9] along with our reconstructor CNN (ConvCS) to implement super-resolution. We send the output of the ConvCS as an input of the ESRGAN to generate a higher resolution final output. The ESRGAN is a well-cited excellent super-resolution model, so we tried to implement its magic in our pipeline to get better results. Fig.p shows the final output of our pipeline when the reconstructed image is enhanced with the ESRGAN. Fig.o(c) is the 64x64 reconstructed output and the Fig.3 is the 128x128 is the final output after superresolution with ESRGAN.
 
 ![esrganZ](https://user-images.githubusercontent.com/93070088/145753173-f54131b3-7779-4d51-bbe6-055bfa923783.png)
 
-/ Fig.p
+<p align="center">
+    Fig(p)
+</p>
 
 # 4. Evaluation
 
-We have trained our network on Three different levels of sampling- 5%, 15%, 25%. After training, we ran the model on a plethora of input sampling levels and plot the SSIM of these reconstructed images (against original) in a graph. As we can see the network trained with 25% sampling works the best and we get a higher SSIM value at the output for most images. The only exception is when input sampling very low (5%-15%) proportion to the original image. In these cases, as expected, the network trained with 5% sampling does a better job. However, we were getting better results throughout the curve from a 5% trained network than we got from the 15% trained one. From this evaluation we can conclude for a scenario where only very low sampling input is expected, our model trained on 5% sampling should be used. However, if higher sampling is possible, we can use a 25% sample trained ConvCS to get better reconstructions. Fig.4 plots the three differently trained ConvCSs and their performance on test data with a wide range of input sampling.
+We have trained our network on Three different levels of sampling- 5%, 15%, 25%. After training, we ran the model on a plethora of input sampling levels and plot the SSIM of these reconstructed images (against original) in a graph. As we can see the network trained with 25% sampling works the best and we get a higher SSIM value at the output for most images. The only exception is when input sampling very low (5%-15%) proportion to the original image. In these cases, as expected, the network trained with 5% sampling does a better job. However, we were getting better results throughout the curve from a 5% trained network than we got from the 15% trained one. From this evaluation we can conclude for a scenario where only very low sampling input is expected, our model trained on 5% sampling should be used. However, if higher sampling is possible, we can use a 25% sample trained ConvCS to get better reconstructions. Fig.j plots the three differently trained ConvCSs and their performance on test data with a wide range of input sampling.
 
 ![ssim](https://user-images.githubusercontent.com/93070088/145702012-4a5972f1-ec08-4e83-9ca1-13f397601771.PNG)
-
+<p align="center">
+    Fig(j)
+</p>
 ![pik3](https://user-images.githubusercontent.com/93070088/145750448-e2bc2398-a4a2-4f8d-a74a-11070d5c6e73.png)
 
 # 5. Discussion and Conclusions
