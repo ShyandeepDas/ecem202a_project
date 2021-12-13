@@ -92,7 +92,7 @@ The approach with L1 norm minimization reconstructed the original image very wel
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/93070088/145702012-4a5972f1-ec08-4e83-9ca1-13f397601771.PNG" />
+  <img src="https://user-images.githubusercontent.com/93070088/145770649-3490bb9a-fcad-46ed-a8b3-4424a075e2e3.PNG" />
 </p>
 
 <p align="center">
