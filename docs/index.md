@@ -8,6 +8,7 @@ Shyandeep Das
 # Required Submissions
 
 * [Proposal](proposal)
-* [Midterm Checkpoint Presentation Slides](http://)
-* [Final Presentation Slides](http://)
+* [Midterm Checkpoint Presentation Slides](https://drive.google.com/file/d/11CBUker9mvNG1juGjyePXRyjbCAYC2d_/view?usp=sharing)
+* [Final Presentation Slides](https://drive.google.com/file/d/1f2yiaEbbOeiOGWKrn0NJXnzxYdM11I9y/view?usp=sharing)
+* [Final Video](https://www.youtube.com/watch?v=kdLsB-FVx7w&ab_channel=ArunachalamChidambaram)
 * [Final Report](report)
